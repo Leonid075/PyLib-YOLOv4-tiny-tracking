@@ -2,9 +2,9 @@ cmake_minimum_required(VERSION 2.8)
 project(pydarknet)
 
 include_directories(/content/cpython/Include)
-include_directories(/content/drive/MyDrive/ytqhjyrf/include)
+include_directories(/content/PyLib-YOLOv4-tiny-tracking/include)
 
-set(SOURCE_LIB lib.cpp /content/cpython/Include/ /content/drive/MyDrive/ytqhjyrf/include/)
+set(SOURCE_LIB lib.cpp /content/cpython/Include/ /content/PyLib-YOLOv4-tiny-tracking/include/)
 
 add_library(libpython3.8 SHARED IMPORTED)
 set_property(TARGET libpython3.8 PROPERTY
