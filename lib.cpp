@@ -1,15 +1,7 @@
 #include <Python.h>
 #include "demo.h"
-#include "list.h"
-#include <stdlib.h>
-#include "darknet.h"
-#include "network.h"
-#include "region_layer.h"
-#include "cost_layer.h"
-#include "utils.h"
-#include "parser.h"
-#include "box.h"
 #include "option_list.h"
+#include "image_opencv.h"
 
 static PyObject* spam_system(PyObject* self, PyObject* args)
 {
@@ -27,7 +19,7 @@ static PyObject* spam_system(PyObject* self, PyObject* args)
 
   PyObject* out = PyTuple_New(Py_ssize_t(6));
   for (int i = 0; i < 6; i++) {
-      PyTuple_SetItem(out, Py_ssize_t(i), PyLong_FromLong(detections[i]));
+      PyTuple_SetItem(out, Py_ssize_t(i), PyLong_FromLong(get_detection(i)));
   }
   return out;
 }
@@ -55,6 +47,5 @@ PyInit_spam(void)
     m = PyModule_Create(&spammodule);
     if (m == NULL)
         return NULL;
-
     return m;
 }
