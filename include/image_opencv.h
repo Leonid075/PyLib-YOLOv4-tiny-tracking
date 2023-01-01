@@ -1,5 +1,6 @@
 #ifndef IMAGE_OPENCV_H
 #define IMAGE_OPENCV_H
+#define OPENCV
 
 #include "image.h"
 #include "matrix.h"
